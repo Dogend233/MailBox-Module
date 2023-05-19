@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  
+    <modelVersion>4.0.0</modelVersion>
+    
+    <groupId>com.tripleying.mailboxmodule</groupId>
+    <artifactId>MailBoxModule</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0</version>
+    
+    <name>MailBoxModule</name>
+    <url>https://github.com/Dogend233/MailBox-Module</url>
+
+    <modules>
+        <module>CommonGUIAPI</module>
+        <module>AllMail</module>
+        <module>DateMail</module>
+        <module>PermissionMail</module>
+        <module>MCGUI</module>
+        <module>VexViewGUI</module>
+        <module>VaultMoney</module>
+        <module>PlayerPointsMoney</module>
+        <module>SinglePlayerMailAPI</module>
+        <module>PlayerMail</module>
+        <module>MailPlaceholder</module>
+        <module>CDKeyMail</module>
+    </modules>
+    
+</project>

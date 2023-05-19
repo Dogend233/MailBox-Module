@@ -1,0 +1,6 @@
+# 邮件类型
+type: 'cdkey'
+# 邮件显示名称
+display: '&6兑换成功'
+# 每日输错cdkey最大次数
+input_every_day: 5
