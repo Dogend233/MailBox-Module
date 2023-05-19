@@ -1,0 +1,28 @@
+# 界面背景
+gui:
+  img: '[local]MailBox/gui_select_type.png'
+  x: -1
+  y: -1
+  w: 190
+  h: 120
+# 邮件类型列表
+list:
+  c: 3
+  x: 5
+  y: 5
+  w: 180
+  h: 110
+  mh: 105
+  sh: 25
+  oh: 0
+  ox: 55
+  oy: 25
+# 邮件类型按钮
+button:
+  text: '&6[%type%&r&6]'
+  img1: '[local]MailBox/button_mail_normal.png'
+  img2: '[local]MailBox/button_mail_normal_.png'
+  x: 5
+  y: 0
+  w: 50
+  h: 20

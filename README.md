@@ -12,6 +12,7 @@ MailBox的模块
   
 ### GUI模块
 [MinecraftGUI - MCGUI](./MCGUI)  
+[VexView界面 - VexViewGUI](./VexViewGUI)  
   
 ### 其他模块
 [公共界面API - CommonGUIAPI](./CommonGUIAPI)  

@@ -1,0 +1,45 @@
+# 邮件提醒
+tips:
+  # VexView滚动条
+  flow:
+    # 启用
+    enable: false
+    # 文字
+    text: '你有新邮件, 请注意查收'
+    y: 20
+    # 是否需要淡黑背景
+    bg: true
+  # VexView HUD
+  hud:
+    # 持续型, 只要邮件不为空就一直显示
+    hold:
+      enable: false
+      img: '[local]MailBox/hud_tip_hold.png'
+      x: -10
+      y: 115
+      w: 10
+      h: 10
+    # 短暂型, 检测到有邮件时显示一次
+    flash:
+      enable: false
+      img: '[local]MailBox/hud_tip_flash.png'
+      x: -29
+      y: 140
+      w: 25
+      h: 25
+      # 显示时间(秒)
+      time: 5
+  # 右上角公告
+  announce:
+    # 启用
+    enable: false
+    # 文字
+    text: '你有新邮件, 请注意查收'
+# 常驻HUD
+hud:
+  enable: false
+  img: '[local]MailBox/hud_mail.png'
+  x: -45
+  y: 120
+  w: 40
+  h: 30

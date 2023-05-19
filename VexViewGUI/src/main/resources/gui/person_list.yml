@@ -1,0 +1,186 @@
+# 界面背景
+gui:
+  img: '[local]MailBox/gui_person_list.png'
+  x: -1
+  y: -1
+  w: 380
+  h: 220
+# 邮件列表
+list:
+  # 每一行的邮件数量
+  c: 1
+  x: 0
+  y: 0
+  w: 0
+  h: 0
+  mh: 0
+  sh: 0
+  oh: 0
+  ox: 0
+  # 每一封邮件组件的y增量
+  oy: 32
+  # 每一页最多获取的邮件数量
+  max: 6
+  # 当邮件列表为空时显示
+  empty: 
+    # 文字(可换行)
+    text: '&6你的收件箱没有邮件哦!'
+    x: -1
+    y: -1
+  # 邮件标题
+  title:
+    # 文字(%title%会被替换为邮件标题)
+    text: '%title%'
+    x: 19
+    y: 13
+    # 文字最大长度(超过会被裁剪加上...)
+    max: 15
+  # 发件人
+  sender:
+    # 文字(%sender%会被替换为发件人)
+    text: '&b来自: &r%sender%'
+    x: 65
+    y: 24
+  # 查看邮件按钮
+  button:
+    text: ''
+    img1: '[local]MailBox/button_list_mail.png'
+    img2: '[local]MailBox/button_list_mail_.png'
+    x: 15
+    y: 10
+    w: 98
+    h: 25
+  # 上一页按钮
+  pre:
+    text: '&6<'
+    img1: '[local]MailBox/button_list_mail.png'
+    img2: '[local]MailBox/button_list_mail_.png'
+    x: 15
+    y: 200
+    w: 30
+    h: 10
+  # 当前页按钮
+  page:
+    #文字(%now%会被替换为当前页, %all%会被替换为总页数)
+    text: '%now%/%all%'
+    x: 60
+    y: 200
+  # 下一页按钮
+  next:
+    text: '&6>'
+    img1: '[local]MailBox/button_list_mail.png'
+    img2: '[local]MailBox/button_list_mail_.png'
+    x: 83
+    y: 200
+    w: 30
+    h: 10
+# 邮件
+mail:
+  # 标题
+  title:
+    text: '%title%'
+    x: 130
+    y: 9
+  # 发件人
+  sender:
+    text: '&b来自: &r%sender%'
+    x: 300
+    y: 19
+  # 邮件内容滚动列表
+  body:
+    c: 0
+    x: 130
+    y: 30
+    w: 238
+    h: 96
+    # 最小高度(建议比h小6)
+    mh: 90
+    # 每一行文字增加的高度
+    sh: 10
+    oh: 0
+    ox: 0
+    oy: 0
+    # 每一行文字的最大数量, 超过这个数量高度加一个sh
+    max: 50
+    # 当行数大于line时, 每一行增加一个sh
+    line: 9
+  # 物品列表
+  item:
+    # 每一行的物品数量
+    c: 9
+    # 第一个物品的起始x
+    x: 131
+    # 第一个物品的起始y
+    y: 131
+    w: 0
+    h: 0
+    mh: 0
+    sh: 0
+    oh: 0
+    # 行内每个物品增加的x增量(物品栏长宽均为16)
+    ox: 18
+    # 列内每个物品增加的y增量
+    oy: 18
+    # 物品背景(格子)
+    bg:
+      img: '[local]MailBox/image_slot_bg.png'
+      x: 0
+      y: 0
+      #图片宽度（推荐偶数且大于等于18）
+      w: 18
+      #图片宽度（推荐偶数且大于等于18）
+      h: 18
+  # 金钱列表
+  money:
+    # 每一行显示的金钱数量
+    c: 2
+    x: 0
+    y: 0
+    w: 0
+    h: 0
+    mh: 0
+    sh: 0
+    oh: 0
+    ox: 50
+    oy: 10
+    # 金钱文字
+    text:
+      # 文字(%type%会被替换为金钱类型, %money%会被替换为金钱数量)
+      text: '%type%&r&6: %money%'
+      # 第一个金钱的坐标
+      x: 140
+      y: 170
+    # 金钱贴图
+    bg:
+      # 在这里添加支持的金钱列表
+      # 例如: Vault默认为money PlayerPoints默认为point
+      money:
+        img: '[local]MailBox/image_money.png'
+        x: 131
+        y: 170
+        w: 8
+        h: 8
+      point:
+        img: '[local]MailBox/image_point.png'
+        x: 131
+        y: 170
+        w: 8
+        h: 8
+  # 领取邮件按钮
+  receive:
+    text: '&e 领取附件'
+    img1: '[local]MailBox/button_mail_normal.png'
+    img2: '[local]MailBox/button_mail_normal_.png'
+    x: 322
+    y: 195
+    w: 45
+    h: 15
+  # 删除邮件按钮
+  delete:
+    text: '&b 删除邮件'
+    img1: '[local]MailBox/button_mail_normal.png'
+    img2: '[local]MailBox/button_mail_normal_.png'
+    x: 322
+    y: 195
+    w: 45
+    h: 15

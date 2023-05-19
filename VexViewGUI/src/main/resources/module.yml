@@ -1,0 +1,7 @@
+name: VexViewGUI
+main: com.tripleying.dogend.mailbox.module.vexviewgui.VexViewGUI
+description: 'VexView界面: 用VexView的GUI收发邮件'
+author: [Dogend]
+version: 1.2.1
+depend-plugin: [VexView]
+depend-module: [CommonGUIAPI]
