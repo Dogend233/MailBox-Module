@@ -11,5 +11,8 @@ MailBox的模块
 [PlayerPoints金钱 - PlayerPointsMoney](./PlayerPointsMoney)  
   
 ### GUI模块
-[公共界面API - CommonGUIAPI](./CommonGUIAPI)  
 [MinecraftGUI - MCGUI](./MCGUI)  
+  
+### 其他模块
+[公共界面API - CommonGUIAPI](./CommonGUIAPI)  
+[邮件变量 - MailPlaceholder](./MailPlaceholder) 

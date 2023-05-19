@@ -1,0 +1,6 @@
+name: MailPlaceholder
+main: com.tripleying.dogend.mailbox.module.mailplaceholder.MailPlaceholder
+description: '邮件变量: 为邮箱提供PAPI变量'
+author: [Dogend]
+version: 1.0.0
+depend-plugin: [PlaceholderAPI]
