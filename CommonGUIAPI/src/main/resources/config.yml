@@ -1,0 +1,4 @@
+# 注册邮件类型时的提示
+register: '&b[CommonGUIAPI]: &a注册邮件支持 &6%mail%'
+# 注销邮件类型时的提示
+unregister: '&b[CommonGUIAPI]: &a注销邮件支持 &6%mail%'

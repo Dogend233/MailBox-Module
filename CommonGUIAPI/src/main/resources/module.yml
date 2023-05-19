@@ -1,0 +1,5 @@
+name: CommonGUIAPI
+main: com.tripleying.dogend.mailbox.module.commonguiapi.CommonGUIAPI
+description: '公共界面API: 为邮箱的GUI提供公共的API'
+author: [Dogend]
+version: 1.0.1
