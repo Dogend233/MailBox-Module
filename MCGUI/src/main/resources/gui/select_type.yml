@@ -1,0 +1,44 @@
+# 选择邮件类型GUI
+# GUI界面, 长度必须为9, 行数1-6
+# t为邮件类型 自定义格子自己设(只能单字符) 不存在的为空气
+gui:
+- 'abcdabcda'
+- 'btttttttb'
+- 'atttttttc'
+- 'dcbadcbad'
+# 标题
+title: '&b[选择邮件类型]'
+# 邮件类型
+t:
+  # 材质
+  id: 'PAPER'
+  # 显示名
+  name: '&6[%type%&6]'
+  # 当邮件类型不足时显示
+  no:
+    # 材质
+    id: 'AIR'
+    # 显示名
+    name: ' '
+# 自定义格子
+slot:
+  a:
+    # 材质
+    id: 'STAINED_GLASS_PANE:4'
+    # 显示名
+    name: ' '
+  b:
+    # 材质
+    id: 'STAINED_GLASS_PANE:5'
+    # 显示名
+    name: ' '
+  c:
+    # 材质
+    id: 'STAINED_GLASS_PANE:3'
+    # 显示名
+    name: ' '
+  d:
+    # 材质
+    id: 'STAINED_GLASS_PANE:6'
+    # 显示名
+    name: ' '

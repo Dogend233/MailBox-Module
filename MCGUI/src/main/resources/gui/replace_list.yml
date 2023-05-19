@@ -1,0 +1,54 @@
+# 邮件内容修改GUI
+# 用于List类型的增加与删除
+# GUI界面, 长度必须为9, 行数1-6
+# n为已经存在的数据,点击删除 r为预览邮件 p为添加数据 自定义格子自己设(只能单字符) 不存在的为空气
+gui:
+- 'abcdabcda'
+- 'bnnnnnnnb'
+- 'annnnnnnc'
+- 'dnnnnnnnd'
+- 'cpxxxxxrc'
+- 'badcbcbab'
+# 标题
+title: '&b[修改%type%&b]'
+# 已存在的数据
+n:
+  # 若数据为物品数据, 则直接显示物品
+  id: 'PAPER'
+  name: '&6[%text%&6]'
+  # 不足时显示
+  no:
+    # 材质
+    id: 'AIR'
+    # 显示名
+    name: ' '
+# 自定义格子
+slot:
+  a:
+    # 材质
+    id: 'STAINED_GLASS_PANE:4'
+    # 显示名
+    name: ' '
+  b:
+    # 材质
+    id: 'STAINED_GLASS_PANE:5'
+    # 显示名
+    name: ' '
+  c:
+    # 材质
+    id: 'STAINED_GLASS_PANE:3'
+    # 显示名
+    name: ' '
+  d:
+    # 材质
+    id: 'STAINED_GLASS_PANE:6'
+    # 显示名
+    name: ' '
+  r:
+    id: 'BEACON'
+    # 显示名
+    name: '&a[预览邮件]'
+  p:
+    id: 'BOOK'
+    # 显示名
+    name: '&a[添加%type%&a]'

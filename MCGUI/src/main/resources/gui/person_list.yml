@@ -1,0 +1,63 @@
+# 个人邮件列表GUI
+# GUI界面, 长度必须为9, 行数1-6
+# m为邮件 左键领取 右键删除 p为上一页 n为下一页 r为一键领取 d为一键删除 自定义格子自己设(只能单字符) 不存在的为空气
+# 默认的头颅现已去掉
+gui:
+- 'abcbabcba'
+- 'bmmmmmmmb'
+- 'cmmmmmmmc'
+- 'ammmmmmma'
+- 'bpxrxdxnb'
+- 'cbabcbabc'
+# 标题
+title: '&b[邮件列表]'
+# 自定义格子
+slot:
+  # 示例头颅格子（1.7.10暂不支持）
+  h:
+    # 材质 (自定义头颅需要耐久为3)
+    id: 'SKULL_ITEM:3'
+    # 显示名
+    name: '&6[%player%]'
+    # 示例Lore
+    lore:
+    - '&e%player%&r'
+    - '&a你好!'
+    # 头颅玩家名
+    skull: '%player%'
+  a:
+    # 材质
+    id: 'STAINED_GLASS_PANE:4'
+    # 显示名
+    name: ' '
+  b:
+    # 材质
+    id: 'STAINED_GLASS_PANE:5'
+    # 显示名
+    name: ' '
+  c:
+    # 材质
+    id: 'STAINED_GLASS_PANE:3'
+    # 显示名
+    name: ' '
+  d:
+    # 材质
+    id: 'STAINED_GLASS_PANE:6'
+    # 显示名
+    name: ' '
+  p:
+    id: 'STONE_HOE'
+    # 显示名
+    name: '&a[上一页]'
+  n:
+    id: 'IRON_HOE'
+    # 显示名
+    name: '&a[下一页]'
+  r:
+    id: 'CHEST'
+    # 显示名
+    name: '&a[一键领取]'
+  d:
+    id: 'TNT'
+    # 显示名
+    name: '&a[一键删除]'

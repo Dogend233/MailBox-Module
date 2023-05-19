@@ -1,0 +1,6 @@
+name: MCGUI
+main: com.tripleying.dogend.mailbox.module.mcgui.MCGUI
+description: 'MinecraftGUI: 用原版Minecraft的GUI收发邮件'
+author: [Dogend]
+version: 1.2.1
+depend-module: [CommonGUIAPI]

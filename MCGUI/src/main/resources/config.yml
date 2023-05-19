@@ -1,0 +1,35 @@
+# 邮件显示的物品
+mail:
+  # 未读
+  unread:
+    id: 'PAPER'
+    name: '&6&l[%type%&r&6&l] - &r&a&l[%title%&r&a&l]'
+    # $xxx$左右不可附加其他东西
+    lore:
+    - '&6[邮件内容]'
+    - '$body$'
+    - '$attach$'
+    - '&b来自: %sender%'
+    - '&6----------%time%'
+    # 是否有附魔特效
+    enhance: true
+  # 已读
+  read: 
+    id: 'PAPER'
+    name: '&6[%type%&6] - &r&a[%title%&r&a]'
+    lore:
+    - '&6[邮件内容]'
+    - '$body$'
+    - '&b来自: %sender%'
+    - '&6----------%time%'
+    enhance: false
+# $xxx$
+escape:
+  body: '&b--%body%'
+  attach:
+    header: '&a[附件]'
+    item:
+      header: '&b--[物品]'
+      body: '&b----&a%name%x&b%amount%'
+    money: '&b--%type%: %count%'
+    command: '&b--有指令'
