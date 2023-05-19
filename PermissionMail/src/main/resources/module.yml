@@ -1,0 +1,6 @@
+name: PermissionMail
+main: com.tripleying.dogend.mailbox.module.permissionmail.PermissionMail
+description: '权限邮件: 发送一封有指定权限的玩家可以收到的邮件'
+author: [Dogend]
+version: 1.1.0
+softdepend-module: [CommonGUIAPI]
