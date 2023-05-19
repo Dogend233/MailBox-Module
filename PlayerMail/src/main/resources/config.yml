@@ -1,0 +1,52 @@
+# 管理员玩家邮件
+admin:
+  # 邮件类型
+  type: 'admin'
+  # 邮件显示名称
+  display: '&6管理员邮件'
+# 普通玩家邮件 (以下配置管理员邮件不受限制)
+player:
+  # 邮件类型
+  type: 'player'
+  # 邮件显示名称
+  display: '&6玩家邮件'
+  # 是否启用玩家邮件
+  enable: false
+#玩家邮件是否允许发送给离线玩家
+offline: false
+# 金钱相关
+money:
+  # 发送玩家邮件时所消耗的金钱
+  expand:
+    # 金钱类型
+    type: 'vault'
+    # 金钱数量
+    amount: 10
+  # 玩家邮件每多一个物品需要多消耗的金钱
+  item:
+    # 金钱类型
+    type: 'vault'
+    # 金钱数量
+    amount: 50
+  # 玩家邮件可以发送的金钱类型及最大数量（如果只设置一个, 则玩家发送时可以直接输入数字, 不用输入类型）
+  send:
+    # 金钱类型:最大数量
+    'vault': 10000
+    'point': 100
+# 物品相关
+item:
+  # 玩家邮件最多可发送的物品堆数量
+  max: 9
+  # 玩家邮件物品过滤
+  filter:
+    # 物品过滤的类型(true为白名单, false为黑名单)
+    mode: false
+    # 过滤Lore中含有此行的物品(&自动转换为§)
+    lore: '§e- 无法作为邮件'
+    # 过滤Material在此列表中的物品
+    # 可使用小写，自动转为大写
+    # 大部分物品支持 [mod名]:[英文id] 格式
+    # 例(Example)：ironbackpacks:backpack
+    id:
+    - 'minecraft:stone'
+    - 'GOLD_CHESTPLATE'

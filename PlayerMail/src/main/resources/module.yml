@@ -1,0 +1,7 @@
+name: PlayerMail
+main: com.tripleying.dogend.module.playermail.PlayerMail
+description: '玩家邮件: 用于管理员对玩家、玩家之间互相发送邮件'
+author: [Dogend]
+version: 1.0.0
+depend-module: [SinglePlayerMailAPI]
+softdepend-module: [CommonGUIAPI]
