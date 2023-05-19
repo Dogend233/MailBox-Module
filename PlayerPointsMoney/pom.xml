@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    
+    <modelVersion>4.0.0</modelVersion>
+    
+    <groupId>com.tripleying.mailboxmodule</groupId>
+    <artifactId>PlayerPointsMoney</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0.0</version>
+    
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <file.encoding>UTF-8</file.encoding>
+    </properties>
+    
+    <name>PlayerPointsMoney</name>
+    <description>PlayerPoints金钱: 兼容PlayerPoints的点券</description>
+    
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+        <repository>
+            <id>rosewood-repo</id>
+            <url>https://repo.rosewooddev.io/repository/public/</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.github.Dogend233</groupId>
+            <artifactId>MailBox</artifactId>
+            <version>v3.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.black_ixx</groupId>
+            <artifactId>playerpoints</artifactId>
+            <version>3.2.5</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+    
+</project>

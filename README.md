@@ -7,6 +7,7 @@ MailBox的模块
   
 ### 金钱模块
 [Vault金钱 - VaultMoney](./VaultMoney)  
+[PlayerPoints金钱 - PlayerPointsMoney](./PlayerPointsMoney)  
   
 ### GUI模块
 [公共界面API - CommonGUIAPI](./CommonGUIAPI)  

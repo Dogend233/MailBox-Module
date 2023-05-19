@@ -1,0 +1,6 @@
+name: PlayerPointsMoney
+main: com.tripleying.dogend.mailbox.module.playerpointsmoney.PlayerPointsMoney
+description: 'PlayerPoints金钱: 兼容PlayerPoints的点券'
+author: [Dogend]
+version: 1.0.0
+depend-plugin: [PlayerPoints]

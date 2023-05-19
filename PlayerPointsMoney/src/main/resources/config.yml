@@ -1,0 +1,4 @@
+# 金钱类型
+type: 'point'
+# 金钱显示名称
+display: '&b点券'
