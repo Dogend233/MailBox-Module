@@ -1,0 +1,4 @@
+# 雪花id生成器, 用于生成邮件id
+yitter:
+  WorkId: 1
+  WorkerIdBitLength: 6

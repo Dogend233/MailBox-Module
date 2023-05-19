@@ -16,4 +16,5 @@ MailBox的模块
   
 ### 其他模块
 [公共界面API - CommonGUIAPI](./CommonGUIAPI)  
+[单独玩家邮件API - SinglePlayerMailAPI](./SinglePlayerMailAPI) 
 [邮件变量 - MailPlaceholder](./MailPlaceholder) 
