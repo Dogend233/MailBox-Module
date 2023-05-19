@@ -1,0 +1,6 @@
+name: DateMail
+main: com.tripleying.dogend.mailbox.module.datemail.DateMail
+description: '期限邮件: 发送一封在特定的时间内登录的玩家可以收到的邮件'
+author: [Dogend]
+version: 1.1.0
+softdepend-module: [CommonGUIAPI]

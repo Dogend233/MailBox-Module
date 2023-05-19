@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  
+    <modelVersion>4.0.0</modelVersion>
+    
+    <groupId>com.tripleying.mailboxmodule</groupId>
+    <artifactId>DateMail</artifactId>
+    <packaging>jar</packaging>
+    <version>1.1.0</version>
+    
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <file.encoding>UTF-8</file.encoding>
+    </properties>
+    
+    <name>DateMail</name>
+    <description>期限邮件: 发送一封在特定的时间内登录的玩家可以收到的邮件</description>
+    
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.github.Dogend233</groupId>
+            <artifactId>MailBox</artifactId>
+            <version>v3.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.tripleying.mailboxmodule</groupId>
+            <artifactId>CommonGUIAPI</artifactId>
+            <version>1.0.1</version>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
+    
+</project>
