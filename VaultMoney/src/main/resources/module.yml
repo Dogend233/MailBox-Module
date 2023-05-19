@@ -1,0 +1,6 @@
+name: VaultMoney
+main: com.tripleying.dogend.mailbox.module.vaultmoney.VaultMoney
+description: 'Vault金钱: 兼容Vault的金币'
+author: [Dogend]
+version: 1.0.0
+depend-plugin: [Vault]
