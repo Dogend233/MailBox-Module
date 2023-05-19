@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    
+  
     <modelVersion>4.0.0</modelVersion>
     
     <groupId>com.tripleying.mailboxmodule</groupId>
-    <artifactId>CommonGUIAPI</artifactId>
+    <artifactId>AllMail</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.1</version>
+    <version>1.1.0</version>
     
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -15,8 +15,8 @@
         <file.encoding>UTF-8</file.encoding>
     </properties>
     
-    <name>CommonGUIAPI</name>
-    <description>公共界面API: 为邮箱的GUI提供公共的API</description>
+    <name>AllMail</name>
+    <description>全体邮件: 发送一封所有玩家(不论在线与否)都能收到的邮件</description>
     
     <repositories>
         <repository>
@@ -30,6 +30,12 @@
             <groupId>com.github.Dogend233</groupId>
             <artifactId>MailBox</artifactId>
             <version>v3.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.tripleying.mailboxmodule</groupId>
+            <artifactId>CommonGUIAPI</artifactId>
+            <version>1.0.1</version>
+            <type>jar</type>
         </dependency>
     </dependencies>
     

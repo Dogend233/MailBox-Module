@@ -1,0 +1,6 @@
+name: AllMail
+main: com.tripleying.dogend.mailbox.module.allmail.AllMail
+description: '全体邮件: 发送一封所有玩家(不论在线与否)都能收到的邮件'
+author: [Dogend]
+version: 1.1.0
+softdepend-module: [CommonGUIAPI]
