@@ -1,6 +1,49 @@
+# 主指令
+command: 'cdkey'
 # 邮件类型
 type: 'cdkey'
 # 邮件显示名称
-display: '&6兑换成功'
+display: '&6礼包'
 # 每日输错cdkey最大次数
 input_every_day: 5
+# 连续两次输入CDKey的间隔(秒)
+input_every_times: 5
+# 导出CDKey的格式
+export:
+    repeat: '可复用 - %cdk%'
+    norepeat: '一次性 - %cdk%'
+# 消息
+message:
+    number_error: '&c请输入正确的数字'
+    list_mail: '&b%id% - %title%'
+    list_no_mail: '&c没有邮件'
+    create_cdkey: '&a生成CDKey: %cdk%'
+    error_cdkey: '&b生成结束, 失败%count%个'
+    mail_no_cdkey: '&b邮件%id%没有未使用的兑换码'
+    export_success: '&a导出成功: %file%'
+    export_fail: '&c导出失败'
+    try_error: '&b兑换错误次数太多, 明天再试吧'
+    try_fast: '&b您兑换的太快了, 休息一下'
+    cdk_absent: '&c兑换码不存在'
+    cdk_used: '&c兑换码已被使用'
+    cdk_using: '&b兑换码可能正在被其他玩家使用, 请稍后再试'
+    cdk_no_mail: '&c兑换码对应的邮件%id%不存在, 请联系管理员'
+    cdk_success: '&a兑换成功, 请查看邮件'
+    cdk_fail: '&c兑换失败'
+    cdk_type: '&c你已经兑换过同类型兑换码了'
+    console_error: '&c该指令只能玩家使用'
+    help: |
+      &6==========&b[兑换码帮助]&6==========
+      &a/mailbox %cmd% 兑换码 &b使用兑换码
+      &a/mailbox %cmd% help &b兑换码帮助
+    help_admin: |
+      &6==========&b[兑换码帮助]&6==========
+      &a/mailbox %cmd% 兑换码 &b使用兑换码
+      &a/mailbox %cmd% help &b兑换码帮助
+      &a/mailbox %cmd% list &b列出前十个CDKey邮件的id+标题
+      &a/mailbox %cmd% list 页码 &b列出所有CDKey邮件的id+标题, 每页十个
+      &a/mailbox %cmd% create 邮件id &b为指定id邮件生成一个一次性兑换码
+      &a/mailbox %cmd% create 邮件id 兑换码数量 &b为指定id邮件生成一定数量的一次性兑换码
+      &a/mailbox %cmd% repeat 邮件id &b为指定id邮件生成一个可复用兑换码
+      &a/mailbox %cmd% repeat 邮件id 兑换码数量 &b为指定id邮件生成一定数量的可复用兑换码
+      &a/mailbox %cmd% export 邮件id &b导出指定id邮件的所有未使用兑换码

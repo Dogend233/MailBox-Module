@@ -1,6 +1,12 @@
 # MailBox-Module
 MailBox的模块  
   
+## 作为前置
+JitPack Maven 仓库 [![](https://jitpack.io/v/Dogend233/MailBox-Module.svg)](https://jitpack.io/#Dogend233/MailBox-Module)  
+1.选择Releases中最新的构建记录点击Get it  
+2.在下面Step 2的Subproject下拉框选择自己想要添加的模块  
+3.复制两段代码到pom.xml  
+  
 ### 邮件模块
 [全体邮件 - AllMail](./AllMail)  
 [期限邮件 - DateMail](./DateMail)  

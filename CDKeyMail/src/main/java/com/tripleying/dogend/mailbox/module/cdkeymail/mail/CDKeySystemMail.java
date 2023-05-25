@@ -4,21 +4,21 @@ import com.tripleying.dogend.mailbox.api.data.Data;
 import com.tripleying.dogend.mailbox.api.data.DataType;
 import com.tripleying.dogend.mailbox.api.mail.PlayerData;
 import com.tripleying.dogend.mailbox.api.mail.SystemMail;
-import com.tripleying.dogend.mailbox.manager.DataManager;
 import com.tripleying.dogend.mailbox.module.cdkeymail.CDKeyMail;
-import java.util.ArrayList;
-import java.util.List;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 
 public class CDKeySystemMail extends SystemMail {
     
+    /**
+     * 一个人是否可以重复领取多个此ID邮件
+     */
     @Data(type = DataType.Boolean)
     private boolean repeat;
 
     public CDKeySystemMail() {
-        super(CDKeyMail.type, CDKeyMail.display);
+        super(CDKeyMail.getMain().getType(), CDKeyMail.getMain().getDisplay());
         repeat = false;
     }
     
@@ -44,20 +44,10 @@ public class CDKeySystemMail extends SystemMail {
 
     @Override
     public void checkPlayerData(PlayerData pd) {
-        return;
     }
 
     @Override
     public boolean couldSend2Player(Player p) {
-        if(this.isExpire()){
-            this.deleteMail();
-            return false;
-        }
-        Object d = DataManager.getDataManager().getPlayerData(p).getData(this.type);
-        List<String> now  = d==null?new ArrayList():(List<String>)d;
-        if(!now.contains(Long.toString(id))){
-            return true;
-        }
         return false;
     }
 

@@ -7,7 +7,6 @@ import com.tripleying.dogend.mailbox.module.commonguiapi.gui.ReplaceUtil;
 import com.tripleying.dogend.mailbox.module.mcgui.MCGUI;
 import com.tripleying.dogend.mailbox.util.MessageUtil;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
