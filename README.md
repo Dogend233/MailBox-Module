@@ -12,6 +12,7 @@ JitPack Maven 仓库 [![](https://jitpack.io/v/Dogend233/MailBox-Module.svg)](ht
 [期限邮件 - DateMail](./DateMail)  
 [权限邮件 - PermissionMail](./PermissionMail)  
 [玩家邮件 - PlayerMail](./PlayerMail)  
+[兑换码邮件 - CDKeyMail](./CDKeyMail)  
   
 ### 金钱模块
 [Vault金钱 - VaultMoney](./VaultMoney)  
