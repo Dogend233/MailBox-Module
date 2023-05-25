@@ -12,5 +12,5 @@ server_cdkey_input_every_day 每天最多可输错CDK的次数
 server_cdkey_input_every_times 两次输入CDK的间隔时间
   
 ### 前置模块
-[公共界面API - CommonGUIAPI](./CommonGUIAPI)  
-[邮件变量 - MailPlaceholder](./MailPlaceholder)  
+[公共界面API - CommonGUIAPI](../CommonGUIAPI)  
+[邮件变量 - MailPlaceholder](../MailPlaceholder)  
