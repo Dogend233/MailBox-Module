@@ -2,7 +2,7 @@
 MinecraftGUI: 用原版Minecraft的GUI收发邮件  
   
 ### 前置模块
-[公共界面API - CommonGUIAPI](./CommonGUIAPI)  
+[公共界面API - CommonGUIAPI](../CommonGUIAPI)  
   
 ### v1.2.1 - 2023-5-19  
 1.为转换Maven项目临时变动头颅代码，可能影响使用  
