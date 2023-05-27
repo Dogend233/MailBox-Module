@@ -26,3 +26,4 @@ JitPack Maven 仓库 [![](https://jitpack.io/v/Dogend233/MailBox-Module.svg)](ht
 [公共界面API - CommonGUIAPI](./CommonGUIAPI)  
 [单独玩家邮件API - SinglePlayerMailAPI](./SinglePlayerMailAPI)  
 [邮件变量 - MailPlaceholder](./MailPlaceholder)  
+[邮件提醒 - MailTips](./MailTips)  

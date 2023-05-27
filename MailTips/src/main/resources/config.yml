@@ -1,0 +1,24 @@
+#当一封新的邮件发送时，如果在线玩家可以领取，发送提示
+#msg 聊天框消息
+#title 标题消息(1.8及以上)
+#sound 声音提示
+types: 
+- msg
+- title
+- sound
+#聊天框消息的内容
+msg: '&6你有一封新邮件, 请打开邮箱查看'
+#标题消息的内容(1.8及以上)
+title:
+    #主标题
+    main: '&6你有一封新邮件'
+    #副标题
+    sub: '&b请打开邮箱查看'
+    #淡入(Tick, 1.11及以上)
+    fadeIn: '10'
+    #显示时间(Tick, 1.11及以上)
+    stay: '70'
+    #淡出(Tick, 1.11及以上)
+    fadeOut: '20'
+#sound提示的声音 (输入playsound 按TAB查看列表)
+sound: 'minecraft:entity.player.levelup'

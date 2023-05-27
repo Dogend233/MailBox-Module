@@ -24,6 +24,7 @@
         <module>PlayerMail</module>
         <module>MailPlaceholder</module>
         <module>CDKeyMail</module>
+        <module>MailTips</module>
     </modules>
     
 </project>
