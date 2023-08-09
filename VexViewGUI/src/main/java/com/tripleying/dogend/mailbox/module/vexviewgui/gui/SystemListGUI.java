@@ -43,6 +43,7 @@ public class SystemListGUI extends VexGui implements VexEventCallable {
     private static ButtonPackage list_pre;
     private static TextPackage list_page;
     private static ButtonPackage list_next;
+    private static TextPackage mail_id;
     private static TextPackage mail_title;
     private static ListPackage mail_body;
     private static int mail_body_max;
@@ -170,6 +171,10 @@ public class SystemListGUI extends VexGui implements VexEventCallable {
         clearMail();
         OpenedVexGui ogui = VexViewAPI.getPlayerCurrentGui(p);
         List<DynamicComponent> cl = new ArrayList();
+        cl.add(mail_id.getVexText(0, 0, t -> {
+            t.replaceAll(s -> s.replaceAll("%id%", Long.toString(sm.getId())));
+            return t;
+        }));
         cl.add(mail_title.getVexText(0, 0, t -> {
             t.replaceAll(s -> s.replaceAll("%title%", sm.getTitle()));
             return t;
@@ -246,6 +251,7 @@ public class SystemListGUI extends VexGui implements VexEventCallable {
             list_pre = VexViewUtil.getButtonPackage(yml.getConfigurationSection("list.pre"));
             list_page = VexViewUtil.getTextPackage(yml.getConfigurationSection("list.page"));
             list_next = VexViewUtil.getButtonPackage(yml.getConfigurationSection("list.next"));
+            mail_id = VexViewUtil.getTextPackage(yml.getConfigurationSection("mail.id"));
             mail_title = VexViewUtil.getTextPackage(yml.getConfigurationSection("mail.title"));
             mail_body = VexViewUtil.getListPackage(yml.getConfigurationSection("mail.body"));
             mail_body_max = yml.getInt("mail.body.max");

@@ -327,7 +327,7 @@ public class CDKeyMail extends MailBoxModule implements BaseCommand, BaseTabComp
             case 2:
                 if(args[1].length()==0){
                     if(sender.isOp()){
-                        return Arrays.asList("list","create","repeat","export");
+                        return Arrays.asList("help","list","create","repeat","export");
                     }else{
                         return Arrays.asList("help");
                     }
@@ -335,17 +335,19 @@ public class CDKeyMail extends MailBoxModule implements BaseCommand, BaseTabComp
                     if("help".startsWith(args[1])){
                         return Arrays.asList("help");
                     }
-                    if("list".startsWith(args[1])){
-                        return Arrays.asList("list");
-                    }
-                    if("create".startsWith(args[1])){
-                        return Arrays.asList("create");
-                    }
-                    if("repeat".startsWith(args[1])){
-                        return Arrays.asList("repeat");
-                    }
-                    if("export".startsWith(args[1])){
-                        return Arrays.asList("export");
+                    if(sender.isOp()){
+                        if("list".startsWith(args[1])){
+                            return Arrays.asList("list");
+                        }
+                        if("create".startsWith(args[1])){
+                            return Arrays.asList("create");
+                        }
+                        if("repeat".startsWith(args[1])){
+                            return Arrays.asList("repeat");
+                        }
+                        if("export".startsWith(args[1])){
+                            return Arrays.asList("export");
+                        }
                     }
                 }
         }

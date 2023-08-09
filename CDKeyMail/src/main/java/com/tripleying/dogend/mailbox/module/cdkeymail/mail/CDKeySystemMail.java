@@ -2,9 +2,16 @@ package com.tripleying.dogend.mailbox.module.cdkeymail.mail;
 
 import com.tripleying.dogend.mailbox.api.data.Data;
 import com.tripleying.dogend.mailbox.api.data.DataType;
+import com.tripleying.dogend.mailbox.api.event.mail.MailBoxPersonMailPreSendEvent;
+import com.tripleying.dogend.mailbox.api.event.mail.MailBoxPersonMailSendEvent;
+import com.tripleying.dogend.mailbox.api.mail.PersonMail;
 import com.tripleying.dogend.mailbox.api.mail.PlayerData;
 import com.tripleying.dogend.mailbox.api.mail.SystemMail;
+import com.tripleying.dogend.mailbox.manager.MailManager;
 import com.tripleying.dogend.mailbox.module.cdkeymail.CDKeyMail;
+import com.tripleying.dogend.module.singleplayermailapi.SinglePlayerMailAPI;
+import java.util.List;
+import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
@@ -49,6 +56,14 @@ public class CDKeySystemMail extends SystemMail {
     @Override
     public boolean couldSend2Player(Player p) {
         return false;
+    }
+    
+    @Override
+    public boolean send2Player(Player p){
+        PersonMail pm = new PersonMail(this);
+        pm.setId(0);
+        List<Player> pl = SinglePlayerMailAPI.send2Player(pm, p);
+        return !pl.isEmpty() && pl.get(0)==p;
     }
 
     @Override

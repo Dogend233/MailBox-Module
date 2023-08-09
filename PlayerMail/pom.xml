@@ -29,7 +29,7 @@
         <dependency>
             <groupId>com.github.Dogend233</groupId>
             <artifactId>MailBox</artifactId>
-            <version>v3.2.0</version>
+            <version>v3.3.0</version>
         </dependency>
         <dependency>
             <groupId>com.tripleying.mailboxmodule</groupId>
@@ -38,8 +38,14 @@
             <type>jar</type>
         </dependency>
         <dependency>
-            <groupId>com.tripleying.dogend.module</groupId>
+            <groupId>com.tripleying.mailboxmodule</groupId>
             <artifactId>SinglePlayerMailAPI</artifactId>
+            <version>1.0.0</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>com.tripleying.mailboxmodule</groupId>
+            <artifactId>TemplateMail</artifactId>
             <version>1.0.0</version>
             <type>jar</type>
         </dependency>

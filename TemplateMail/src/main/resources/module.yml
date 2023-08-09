@@ -1,0 +1,6 @@
+name: TemplateMail
+main: com.tripleying.dogend.mailbox.module.templatemail.TemplateMail
+description: '模板邮件: 提供可以一键发送给玩家的邮件模板'
+author: [Dogend]
+version: 1.0.0
+softdepend-module: [CommonGUIAPI]

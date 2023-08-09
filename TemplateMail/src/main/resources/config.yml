@@ -1,0 +1,4 @@
+# 邮件类型
+type: 'template'
+# 邮件显示名称
+display: '&6模板邮件'

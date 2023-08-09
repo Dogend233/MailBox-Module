@@ -39,7 +39,7 @@ list:
   sender:
     # 文字(%sender%会被替换为发件人)
     text: '&b来自: &r%sender%'
-    x: 65
+    x: 19
     y: 24
   # 查看邮件按钮
   button:
@@ -76,6 +76,11 @@ list:
     h: 10
 # 邮件
 mail:
+  # ID
+  id:
+    text: '&eID: &r%id%'
+    x: 130
+    y: 19
   # 标题
   title:
     text: '%title%'

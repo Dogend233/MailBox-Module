@@ -2,9 +2,12 @@ package com.tripleying.dogend.module.playermail.mail;
 
 import com.tripleying.dogend.mailbox.api.data.Data;
 import com.tripleying.dogend.mailbox.api.data.DataType;
+import com.tripleying.dogend.mailbox.api.event.mail.MailBoxPersonMailPreSendEvent;
+import com.tripleying.dogend.mailbox.api.event.mail.MailBoxPersonMailSendEvent;
 import com.tripleying.dogend.mailbox.api.mail.PersonMail;
 import com.tripleying.dogend.mailbox.api.mail.PlayerData;
 import com.tripleying.dogend.mailbox.api.mail.SystemMail;
+import com.tripleying.dogend.mailbox.manager.MailManager;
 import com.tripleying.dogend.module.playermail.PlayerMail;
 import com.tripleying.dogend.module.singleplayermailapi.SinglePlayerMailAPI;
 import java.util.ArrayList;
@@ -63,6 +66,11 @@ public class AdminSystemMail extends SystemMail {
     @Override
     public boolean couldSend2Player(Player p) {
         return true;
+    }
+    
+    @Override
+    public boolean send2Player(Player p){
+        return false;
     }
 
     @Override

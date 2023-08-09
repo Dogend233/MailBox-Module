@@ -1,0 +1,13 @@
+# 主指令
+command: 'cdk'
+# 消息
+message:
+    help: |
+      &6==========&b[兑换码帮助]&6==========
+      &a/mailbox %cmd% &b打开兑换码GUI
+      &a/mailbox %cmd% help &b兑换码帮助
+    help_admin: |
+      &6==========&b[兑换码帮助]&6==========
+      &a/mailbox %cmd% &b打开兑换码GUI
+      &a/mailbox %cmd% help &b兑换码帮助
+      &a/mailbox %cmd% list &b打开GUI管理界面

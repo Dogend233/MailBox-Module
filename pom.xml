@@ -25,6 +25,8 @@
         <module>MailPlaceholder</module>
         <module>CDKeyMail</module>
         <module>MailTips</module>
+        <module>VexViewCDKeyGUI</module>
+        <module>CommonTemplateAPI</module>
     </modules>
     
 </project>

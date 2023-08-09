@@ -4,7 +4,7 @@ gui:
   x: -1
   y: -1
   w: 380
-  h: 220
+  h: 235
 # 邮件列表
 list:
   # 每一行的邮件数量
@@ -27,6 +27,15 @@ list:
     text: '&6你的收件箱没有邮件哦!'
     x: -1
     y: -1
+  # 未读/领取邮件提示
+  tip:
+    text: ''
+    img1: '[local]MailBox/hud_tip_hold.png'
+    img2: '[local]MailBox/hud_tip_hold.png'
+    x: 108
+    y: 8
+    w: 7
+    h: 7
   # 邮件标题
   title:
     # 文字(%title%会被替换为邮件标题)
@@ -39,7 +48,7 @@ list:
   sender:
     # 文字(%sender%会被替换为发件人)
     text: '&b来自: &r%sender%'
-    x: 65
+    x: 19
     y: 24
   # 查看邮件按钮
   button:
@@ -59,7 +68,7 @@ list:
     y: 200
     w: 30
     h: 10
-  # 当前页按钮
+  # 当前页
   page:
     #文字(%now%会被替换为当前页, %all%会被替换为总页数)
     text: '%now%/%all%'
@@ -74,6 +83,38 @@ list:
     y: 200
     w: 30
     h: 10
+  # 全部操作按钮
+  all:
+    # 已读全部无附件邮件按钮
+    see:
+      enable: true
+      text: '&6全读'
+      img1: '[local]MailBox/button_list_mail.png'
+      img2: '[local]MailBox/button_list_mail_.png'
+      x: 15
+      y: 215
+      w: 30
+      h: 10
+    # 领取全部带附件邮件按钮
+    receive:
+      enable: true
+      text: '&6全领'
+      img1: '[local]MailBox/button_list_mail.png'
+      img2: '[local]MailBox/button_list_mail_.png'
+      x: 49
+      y: 215
+      w: 30
+      h: 10
+    # 删除全部已读/已领取按钮
+    delete:
+      enable: true
+      text: '&6清空'
+      img1: '[local]MailBox/button_list_mail.png'
+      img2: '[local]MailBox/button_list_mail_.png'
+      x: 83
+      y: 215
+      w: 30
+      h: 10
 # 邮件
 mail:
   # 标题
@@ -172,7 +213,7 @@ mail:
     img1: '[local]MailBox/button_mail_normal.png'
     img2: '[local]MailBox/button_mail_normal_.png'
     x: 322
-    y: 195
+    y: 210
     w: 45
     h: 15
   # 删除邮件按钮
@@ -181,6 +222,6 @@ mail:
     img1: '[local]MailBox/button_mail_normal.png'
     img2: '[local]MailBox/button_mail_normal_.png'
     x: 322
-    y: 195
+    y: 210
     w: 45
     h: 15

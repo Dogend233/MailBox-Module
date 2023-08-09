@@ -1,6 +1,7 @@
 package com.tripleying.dogend.mailbox.module.vexviewgui;
 
 import com.tripleying.dogend.mailbox.api.command.BaseCommand;
+import com.tripleying.dogend.mailbox.api.command.BaseTabCompleter;
 import com.tripleying.dogend.mailbox.api.module.MailBoxModule;
 import com.tripleying.dogend.mailbox.module.vexviewgui.gui.PersonListGUI;
 import com.tripleying.dogend.mailbox.module.vexviewgui.gui.ReplaceMailGUI;
@@ -13,7 +14,7 @@ import java.util.List;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class VexViewGUI extends MailBoxModule implements BaseCommand {
+public class VexViewGUI extends MailBoxModule implements BaseCommand, BaseTabCompleter {
     
     private List<String> help;
     private List<String> admin_help;
@@ -46,7 +47,7 @@ public class VexViewGUI extends MailBoxModule implements BaseCommand {
         PersonListGUI.init(this.getConfig("gui/person_list.yml"));
         SelectTypeGUI.init(this.getConfig("gui/select_type.yml"));
         ReplaceMailGUI.init(this.getConfig("gui/replace_mail.yml"));
-        SystemListGUI.init(this.getConfig("gui/system_mail.yml"));
+        SystemListGUI.init(this.getConfig("gui/system_list.yml"));
         this.registerCommand(this);
         lr = new VexViewGUIListener(this.getConfig());
         this.registerListener(lr);
@@ -105,7 +106,7 @@ public class VexViewGUI extends MailBoxModule implements BaseCommand {
                 PersonListGUI.open((Player)sender);
             }
         }else{
-            if(args.length>1 && args[0].equals("reload")){
+            if(args.length>1 && args[1].equals("reload")){
                 if(sender.isOp()){
                     this.onDisable();
                     this.onEnable();
@@ -124,6 +125,44 @@ public class VexViewGUI extends MailBoxModule implements BaseCommand {
         }else{
             help.forEach(h -> MessageUtil.log(sender, h));
         }
+    }
+
+    @Override
+    public boolean allowTab(CommandSender cs) {
+        return true;
+    }
+
+    @Override
+    public List<String> onTabComplete(CommandSender sender, String[] args) {
+        switch (args.length) {
+            case 2:
+                if(args[1].length()==0){
+                    if(sender.isOp()){
+                        return Arrays.asList("new","list","system","reload","help");
+                    }else{
+                        return Arrays.asList("list","help");
+                    }
+                }else{
+                    if("help".startsWith(args[1])){
+                        return Arrays.asList("help");
+                    }
+                    if("list".startsWith(args[1])){
+                        return Arrays.asList("list");
+                    }
+                    if(sender.isOp()){
+                        if("new".startsWith(args[1])){
+                            return Arrays.asList("new");
+                        }
+                        if("system".startsWith(args[1])){
+                            return Arrays.asList("system");
+                        }
+                        if("reload".startsWith(args[1])){
+                            return Arrays.asList("reload");
+                        }
+                    }
+                }
+        }
+        return null;
     }
 
     public static VexViewGUI getVexViewGUI() {

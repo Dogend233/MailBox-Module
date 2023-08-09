@@ -15,9 +15,15 @@ public abstract class HUDPackage extends VexPackage {
     }
     
     public abstract VexShow getVexShow();
-    
+
+    public abstract VexShow getScaleVexShow(Player p);
+
     public void sendHud(Player p){
         VexViewAPI.sendHUD(p, getVexShow());
+    }
+
+    public void sendScaleHud(Player p) {
+        VexViewAPI.sendHUD(p, getScaleVexShow(p));
     }
     
     public void removeHud(Player p){

@@ -57,6 +57,11 @@ public class PlayerSystemMail extends SystemMail {
     public boolean couldSend2Player(Player p) {
         return true;
     }
+    
+    @Override
+    public boolean send2Player(Player p){
+        return false;
+    }
 
     @Override
     public boolean autoCreateDatabaseTable() {

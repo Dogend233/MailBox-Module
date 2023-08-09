@@ -1,0 +1,7 @@
+name: VexViewCDKeyGUI
+main: com.tripleying.dogend.mailbox.module.vexviewcdkeygui.VexViewCDKeyGUI
+description: 'VexViewCDKey界面: 用VexView的GUI进行CDKey兑换、生成'
+author: [Dogend]
+version: 1.0.0
+depend-plugin: [VexView]
+depend-module: [VexViewGUI, CDKeyMail]

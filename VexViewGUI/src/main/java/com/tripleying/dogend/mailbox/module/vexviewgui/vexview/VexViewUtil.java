@@ -3,9 +3,24 @@ package com.tripleying.dogend.mailbox.module.vexviewgui.vexview;
 import com.tripleying.dogend.mailbox.util.MessageUtil;
 import java.util.Arrays;
 import java.util.List;
+import lk.vexview.api.VexViewAPI;
 import org.bukkit.configuration.ConfigurationSection;
+import org.bukkit.entity.Player;
 
 public class VexViewUtil {
+    
+    public static double[] getPlayerClientScale(Player p) {
+        double[] scale = new double[2];
+        scale[0] = 1D;
+        scale[1] = 1D;
+        try {
+            int w = VexViewAPI.getPlayerClientWindowWidth(p);
+            int h = VexViewAPI.getPlayerClientWindowHeight(p);
+            scale[0] = w / 480D;
+            scale[1] = h / 255D;
+        } catch (Exception ignored) {}
+        return scale;
+    }
     
     public static GuiPackage getGuiPackage(ConfigurationSection cs){
         return new GuiPackage(

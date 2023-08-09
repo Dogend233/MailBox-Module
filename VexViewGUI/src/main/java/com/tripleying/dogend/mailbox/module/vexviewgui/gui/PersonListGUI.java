@@ -32,6 +32,7 @@ public class PersonListGUI extends VexGui implements VexEventCallable {
     private static ListPackage list_mail;
     private static int list_max;
     private static TextPackage empty_mail;
+    private static ButtonPackage list_tip;
     private static TextPackage list_title;
     private static int list_title_max;
     private static TextPackage list_sender;
@@ -39,6 +40,12 @@ public class PersonListGUI extends VexGui implements VexEventCallable {
     private static ButtonPackage list_pre;
     private static TextPackage list_page;
     private static ButtonPackage list_next;
+    private static ButtonPackage list_all_see;
+    private static boolean list_all_see_enable;
+    private static ButtonPackage list_all_receive;
+    private static boolean list_all_receive_enable;
+    private static ButtonPackage list_all_delete;
+    private static boolean list_all_delete_enable;
     private static TextPackage mail_title;
     private static ListPackage mail_body;
     private static int mail_body_max;
@@ -55,6 +62,7 @@ public class PersonListGUI extends VexGui implements VexEventCallable {
     private boolean flag = true;
     private int list_page_now;
     private Player p;
+    
     
     public PersonListGUI(String img, int x, int y, int w, int h){
         super(img, x, y, w, h);
@@ -81,6 +89,9 @@ public class PersonListGUI extends VexGui implements VexEventCallable {
             list.add(list_button.getButton("MailBoxPersonListGUI"+p.getName()+pm.getType()+pm.getId(), ox, oy, p -> {
                 changeSeeMail(pm);
             }, null, null));
+            if(!pm.isReceived()){
+                list.add(list_tip.getButton("MailBoxPersonListGUI"+p.getName()+pm.getType()+pm.getId()+"tip", ox, oy, null, null, null));
+            }
             list.add(list_title.getVexText(ox, oy, t -> {
                 t.replaceAll(s -> subMailTitle(s.replaceAll("%title%", pm.getTitle())));
                 return t;
@@ -93,7 +104,18 @@ public class PersonListGUI extends VexGui implements VexEventCallable {
         return list;
     }
     
+    private void clearList(){
+        OpenedVexGui ogui = VexViewAPI.getPlayerCurrentGui(p);
+        if(!dcl.isEmpty()){
+            for(DynamicComponent dc:dcl){
+                ogui.removeDynamicComponent(dc);
+            }
+            dcl.clear();
+        }
+    }
+    
     public void changePage(int page){
+        clearList();
         OpenedVexGui ogui = VexViewAPI.getPlayerCurrentGui(p);
         int wait = 0;
         while(ogui==null){
@@ -102,12 +124,6 @@ public class PersonListGUI extends VexGui implements VexEventCallable {
             }
             wait++;
             ogui = VexViewAPI.getPlayerCurrentGui(p);
-        }
-        if(!dcl.isEmpty()){
-            for(DynamicComponent dc:dcl){
-                ogui.removeDynamicComponent(dc);
-            }
-            dcl.clear();
         }
         List<DynamicComponent> list = new ArrayList();
         List<PersonMail> pml;
@@ -149,6 +165,33 @@ public class PersonListGUI extends VexGui implements VexEventCallable {
             Iterator<PersonMail> it = pml.iterator();
             list.addAll(list_mail.getDynamicComponentList(pml.size(), (ox, oy) -> getMailComponents4List(it.hasNext()?it.next():null, ox, oy)));
         }
+        if(list_all_see_enable){
+            list.add(list_all_see.getButton("MailBoxPersonListGUI"+p.getName()+"allsee", 0, 0, player -> {
+                if(flag){
+                    flag = false;
+                    allSee();
+                    flag = true;
+                };
+            }, null, null));
+        }
+        if(list_all_receive_enable){
+            list.add(list_all_receive.getButton("MailBoxPersonListGUI"+p.getName()+"allreceive", 0, 0, player -> {
+                if(flag){
+                    flag = false;
+                    allReceive();
+                    flag = true;
+                };
+            }, null, null));
+        }
+        if(list_all_delete_enable){
+            list.add(list_all_delete.getButton("MailBoxPersonListGUI"+p.getName()+"alldelete", 0, 0, player -> {
+                if(flag){
+                    flag = false;
+                    allDelete();
+                    flag = true;
+                };
+            }, null, null));
+        }
         for(DynamicComponent dc:list){
             ogui.addDynamicComponent(dc);
             dcl.add(dc);
@@ -167,7 +210,9 @@ public class PersonListGUI extends VexGui implements VexEventCallable {
     
     private void changeSeeMail(PersonMail pm){
         clearMail();
-        pm.seeMail();
+        if(pm.seeMail()){
+            changePage(list_page_now);
+        }
         OpenedVexGui ogui = VexViewAPI.getPlayerCurrentGui(p);
         List<DynamicComponent> cl = new ArrayList();
         cl.add(mail_title.getVexText(0, 0, t -> {
@@ -207,8 +252,11 @@ public class PersonListGUI extends VexGui implements VexEventCallable {
                 ButtonFunction bf = player -> {
                     if(flag){
                         flag = false;
-                        if(pm.receivedMail()){
-                            changeSeeMail(pm);
+                        if(!pm.isReceived()){
+                            if(pm.receivedMail()){
+                                changePage(list_page_now);
+                                changeSeeMail(pm);
+                            }
                         }
                         flag = true;
                     };
@@ -234,6 +282,43 @@ public class PersonListGUI extends VexGui implements VexEventCallable {
         });
     }
     
+    private void allSee(){
+        setClosable(false);
+        clearMail();
+        clearList();
+        List<PersonMail> pml = MailManager.getMailManager().getPersonMailList(p);
+        for(PersonMail pm:pml){
+            pm.seeMail();
+        }
+        changePage(list_page_now);
+        setClosable(true);
+    }
+    
+    private void allReceive(){
+        setClosable(false);
+        clearMail();
+        clearList();
+        List<PersonMail> pml = MailManager.getMailManager().getPersonMailList(p);
+        for(PersonMail pm:pml){
+            if(!pm.isReceived() && pm.getAttachFile().hasAttach()){
+                if(!pm.receivedMail()){
+                    break;
+                }
+            }
+        }
+        changePage(list_page_now);
+        setClosable(true);
+    }
+    
+    private void allDelete(){
+        setClosable(false);
+        clearMail();
+        clearList();
+        MailManager.getMailManager().clearPersonReceivedMail(p);
+        changePage(list_page_now);
+        setClosable(true);
+    }
+    
     private String subMailTitle(String title){
         boolean suffix = false;
         if(title.length()>list_title_max){
@@ -253,6 +338,7 @@ public class PersonListGUI extends VexGui implements VexEventCallable {
             list_mail = VexViewUtil.getListPackage(yml.getConfigurationSection("list"));
             list_max = yml.getInt("list.max");
             empty_mail = VexViewUtil.getTextPackage(yml.getConfigurationSection("list.empty"));
+            list_tip = VexViewUtil.getButtonPackage(yml.getConfigurationSection("list.tip"));
             list_title = VexViewUtil.getTextPackage(yml.getConfigurationSection("list.title"));
             list_title_max = yml.getInt("list.title.max");
             list_sender = VexViewUtil.getTextPackage(yml.getConfigurationSection("list.sender"));
@@ -260,6 +346,12 @@ public class PersonListGUI extends VexGui implements VexEventCallable {
             list_pre = VexViewUtil.getButtonPackage(yml.getConfigurationSection("list.pre"));
             list_page = VexViewUtil.getTextPackage(yml.getConfigurationSection("list.page"));
             list_next = VexViewUtil.getButtonPackage(yml.getConfigurationSection("list.next"));
+            list_all_see = VexViewUtil.getButtonPackage(yml.getConfigurationSection("list.all.see"));
+            list_all_see_enable = yml.getBoolean("list.all.see.enable");
+            list_all_receive = VexViewUtil.getButtonPackage(yml.getConfigurationSection("list.all.receive"));
+            list_all_receive_enable = yml.getBoolean("list.all.receive.enable");
+            list_all_delete = VexViewUtil.getButtonPackage(yml.getConfigurationSection("list.all.delete"));
+            list_all_delete_enable = yml.getBoolean("list.all.delete.enable");
             mail_title = VexViewUtil.getTextPackage(yml.getConfigurationSection("mail.title"));
             mail_body = VexViewUtil.getListPackage(yml.getConfigurationSection("mail.body"));
             mail_body_max = yml.getInt("mail.body.max");

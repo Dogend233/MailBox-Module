@@ -1,0 +1,28 @@
+# 界面背景
+gui:
+  img: '[local]MailBox/gui_select_type.png'
+  x: -1
+  y: -1
+  w: 190
+  h: 120
+# 邮件标题
+title:
+  text: '&6CDKey兑换'
+  x: -1
+  y: 20
+# 输入CDK
+cdkey:
+  x: 25
+  y: -1
+  w: 140
+  h: 12
+  max: 32
+# 兑换
+use:
+  text: '&a兑换'
+  img1: '[local]MailBox/button_mail_normal.png'
+  img2: '[local]MailBox/button_mail_normal_.png'
+  x: -1
+  y: 85
+  w: 30
+  h: 18
