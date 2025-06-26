@@ -189,22 +189,22 @@ mail:
       # 文字(%type%会被替换为金钱类型, %money%会被替换为金钱数量)
       text: '%type%&r&6: %money%'
       # 第一个金钱的坐标
-      x: 140
-      y: 170
+      x: 310
+      y: 135
     # 金钱贴图
     bg:
       # 在这里添加支持的金钱列表
       # 例如: Vault默认为money PlayerPoints默认为point
       money:
         img: '[local]MailBox/image_money.png'
-        x: 131
-        y: 170
+        x: 301
+        y: 135
         w: 8
         h: 8
       point:
         img: '[local]MailBox/image_point.png'
-        x: 131
-        y: 170
+        x: 301
+        y: 135
         w: 8
         h: 8
   # 领取邮件按钮

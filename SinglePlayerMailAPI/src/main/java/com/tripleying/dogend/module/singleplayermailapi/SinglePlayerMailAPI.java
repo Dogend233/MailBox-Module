@@ -1,11 +1,9 @@
 package com.tripleying.dogend.module.singleplayermailapi;
 
-import com.github.yitter.contract.IdGeneratorOptions;
 import com.github.yitter.idgen.YitIdHelper;
 import com.tripleying.dogend.mailbox.api.event.mail.MailBoxPersonMailPreSendEvent;
 import com.tripleying.dogend.mailbox.api.event.mail.MailBoxPersonMailSendEvent;
 import com.tripleying.dogend.mailbox.api.mail.PersonMail;
-import com.tripleying.dogend.mailbox.api.module.MailBoxModule;
 import com.tripleying.dogend.mailbox.manager.MailManager;
 import com.tripleying.dogend.mailbox.util.TimeUtil;
 import com.tripleying.dogend.module.singleplayermailapi.util.PersonMailData;
@@ -15,20 +13,9 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
 
-public class SinglePlayerMailAPI extends MailBoxModule {
-
-    @Override
-    public void onEnable() {
-        this.saveDefaultConfig();
-        this.reloadConfig();
-        YamlConfiguration config = this.getConfig();
-        IdGeneratorOptions op = new IdGeneratorOptions(Short.parseShort(config.getString("yitter.WorkId", "1")));
-        op.WorkerIdBitLength = Byte.parseByte(config.getString("yitter.WorkerIdBitLength", "6"));
-        YitIdHelper.setIdGenerator(op);
-    }
+public class SinglePlayerMailAPI {
 
     public static List<String> send2Player(PersonMail pm, String... names){
         if(pm.getId()==0){
@@ -88,10 +75,6 @@ public class SinglePlayerMailAPI extends MailBoxModule {
 
     public static boolean send2OfflinePlayerByUUID(PersonMail pm, String uuid){
         PersonMailData pmd = new PersonMailData();
-        LinkedHashMap<String, Object> selid = new LinkedHashMap();
-        selid.put("uuid", uuid);
-        selid.put("type", pm.getType());
-        selid.put("id", pm.getId());
         YamlConfiguration yml = pm.toYamlConfiguration();
         yml.set("uuid", uuid);
         yml.set("received", false);

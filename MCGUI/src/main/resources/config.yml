@@ -1,5 +1,6 @@
 # 邮件显示的物品
 mail:
+  enhance_tag: 'ARROW_INFINITE'
   # 未读
   unread:
     id: 'PAPER'

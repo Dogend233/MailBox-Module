@@ -72,7 +72,10 @@ public class MailTips extends MailBoxModule implements Listener {
     @EventHandler
     public void onPersonMailSend(MailBoxPersonMailSendEvent evt){
         PersonMail pm = evt.getPersonMail();
-        types.forEach(type -> type.sendTips(pm));
+        Player p = pm.getReceiver();
+        if(p!=null && p.isOnline()){
+            types.forEach(type -> type.sendTips(pm));
+        }
     }
     
     @EventHandler

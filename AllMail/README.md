@@ -3,3 +3,7 @@
   
 ### 前置模块
 [公共界面API - CommonGUIAPI](../CommonGUIAPI)  
+  
+### v1.1.0  
+1.兼容了GUI模块: CommonGUIAPI  
+2.移除前置: MCGUI  

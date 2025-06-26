@@ -13,6 +13,7 @@ JitPack Maven 仓库 [![](https://jitpack.io/v/Dogend233/MailBox-Module.svg)](ht
 [权限邮件 - PermissionMail](./PermissionMail)  
 [玩家邮件 - PlayerMail](./PlayerMail)  
 [兑换码邮件 - CDKeyMail](./CDKeyMail)  
+[模板邮件 - TemplateMail](./TemplateMail)  
   
 ### 金钱模块
 [Vault金钱 - VaultMoney](./VaultMoney)  
@@ -21,6 +22,7 @@ JitPack Maven 仓库 [![](https://jitpack.io/v/Dogend233/MailBox-Module.svg)](ht
 ### GUI模块
 [MinecraftGUI - MCGUI](./MCGUI)  
 [VexView界面 - VexViewGUI](./VexViewGUI)  
+[VV兑换码界面 - VexViewCDKeyGUI](./VexViewCDKeyGUI)  
   
 ### 其他模块
 [公共界面API - CommonGUIAPI](./CommonGUIAPI)  

@@ -2,4 +2,4 @@ name: MailTips
 main: com.tripleying.dogend.mailbox.module.mailtips.MailTips
 description: '邮件提醒: 收到邮件时提醒玩家'
 author: [Dogend]
-version: 1.0.0
+version: 1.0.1

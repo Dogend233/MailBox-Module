@@ -84,16 +84,18 @@ public class VexViewGUIListener implements Listener {
     public void onPersonMailSend(MailBoxPersonMailSendEvent evt) {
         PersonMail pm = evt.getPersonMail();
         Player p = pm.getReceiver();
-        if (hud_tip_hold != null) {
-            if (hud_scale) hud_tip_hold.sendScaleHud(p);
-            else hud_tip_hold.sendHud(p);
+        if(p!=null && p.isOnline()){
+            if (hud_tip_hold != null) {
+                if (hud_scale) hud_tip_hold.sendScaleHud(p);
+                else hud_tip_hold.sendHud(p);
+            }
+            if (hud_tip_flash != null) {
+                if (hud_scale) hud_tip_flash.sendScaleHud(p);
+                else hud_tip_flash.sendHud(p);
+            }
+            if (flow_tip != null) flow_tip.sendFlow(p, null);
+            if (announce_tip != null) VexViewAPI.sendAnnounceMessage(p, announce_tip, AnnounceType.NORMAL);
         }
-        if (hud_tip_flash != null) {
-            if (hud_scale) hud_tip_flash.sendScaleHud(p);
-            else hud_tip_flash.sendHud(p);
-        }
-        if (flow_tip != null) flow_tip.sendFlow(p, null);
-        if (announce_tip != null) VexViewAPI.sendAnnounceMessage(p, announce_tip, AnnounceType.NORMAL);
     }
 
     @EventHandler

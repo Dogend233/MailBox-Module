@@ -15,3 +15,6 @@ server_cdkey_input_every_times 两次输入CDK的间隔时间
 [单独玩家邮件API - SinglePlayerMailAPI](../SinglePlayerMailAPI)  
 [公共界面API - CommonGUIAPI](../CommonGUIAPI)  
 [邮件变量 - MailPlaceholder](../MailPlaceholder)  
+  
+### v1.1.0  
+1.修复领取多个相同CDK邮件出现错误的问题，需要删除以前所有personmail表里的cdkey邮件

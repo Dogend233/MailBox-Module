@@ -1,8 +1,6 @@
 package com.tripleying.dogend.mailbox.module.vexviewgui.gui;
 
-import com.tripleying.dogend.mailbox.api.event.mail.MailBoxSystemMailSendEvent;
 import com.tripleying.dogend.mailbox.api.mail.SystemMail;
-import com.tripleying.dogend.mailbox.manager.MailManager;
 import com.tripleying.dogend.mailbox.module.commonguiapi.gui.ReplaceConfig;
 import com.tripleying.dogend.mailbox.module.vexviewgui.vexview.ButtonPackage;
 import com.tripleying.dogend.mailbox.module.vexviewgui.vexview.InvGuiPackage;
@@ -19,7 +17,6 @@ import lk.vexview.gui.VexInventoryGui;
 import lk.vexview.gui.components.VexButton;
 import lk.vexview.gui.components.VexEventCallable;
 import lk.vexview.gui.components.VexSlot;
-import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;

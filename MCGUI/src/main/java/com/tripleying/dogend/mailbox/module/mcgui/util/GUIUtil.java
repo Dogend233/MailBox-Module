@@ -18,6 +18,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 public class GUIUtil {
     
+    private static Enchantment enhance;
     private static ItemStack read;
     private static List<String> read_lore;
     private static ItemStack unread;
@@ -30,6 +31,16 @@ public class GUIUtil {
     private static String escape_attach_command;
     
     public static void init(YamlConfiguration yml){
+        enhance = Enchantment.values()[0];
+//        for(Enchantment en:Enchantment.values()){
+//            System.out.println(en.toString());
+//        }
+//        try{
+//            enhance = Enchantment.getByName(yml.getString("mail.enhance_tag", "ARROW_INFINITE"));
+//        }catch(Exception ex){
+//            ex.printStackTrace();
+//            enhance = Enchantment.ARROW_INFINITE;
+//        }
         read = setItemStackDisplayName(getItemStack(yml.getString("mail.read.id", "PAPER")), MessageUtil.color(yml.getString("mail.read.name", "&6[%type%] - &r&a[%title%]")));
         read_lore = yml.getStringList("mail.read.lore");
         read_lore.replaceAll(l -> MessageUtil.color(l));
@@ -60,7 +71,7 @@ public class GUIUtil {
     
     public static ItemStack setEnchantment(ItemStack is){
         ItemMeta im = is.getItemMeta();
-        im.addEnchant(Enchantment.ARROW_INFINITE, 1, true);
+        im.addEnchant(enhance, 1, true);
         try{
             Class.forName("org.bukkit.inventory.ItemFlag");
             im.addItemFlags(ItemFlag.HIDE_ENCHANTS);
